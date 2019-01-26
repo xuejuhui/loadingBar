@@ -1,0 +1,64 @@
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  animation: fadeout 11s linear forwards;
+}
+
+@keyframes fadeout {
+  0%,
+  91% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loading h2 {
+  color: #000;
+}
+.loading .bar {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  border: 2px solid #000;
+  background: transparent;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+.loading .bar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transform-origin: left;
+  animation: animate 10s linear forwards;
+}
+.loading .bar:after {
+  content: "loading";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  font-size: 20px;
+  mix-blend-mode: difference;
+}
